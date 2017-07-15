@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+
+<div class="container">
+  <h1>Přihlášky</h1>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand active" routerLink="/overview" routerLinkActive="active">Overview</a>
+        <a class="navbar-brand" routerLink="/export" routerLinkActive="active">Export</a>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
