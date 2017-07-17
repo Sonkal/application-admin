@@ -9,6 +9,7 @@ import { AdminMainComponent } from './admin-main/admin-main.component';
 import {RouterModule,Routes} from "@angular/router";
 import { AdminOverviewComponent } from './admin-overview/admin-overview.component';
 import { AdminExportComponent } from './admin-export/admin-export.component';
+import {AppService} from "./service/app-service";
 
 const appRoutes: Routes = [
   { path: 'overview', component: AdminOverviewComponent },
@@ -35,7 +36,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

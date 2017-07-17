@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from "../service/app-service";
 
 @Component({
   selector: 'app-admin-overview',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminOverviewComponent implements OnInit {
 
-  constructor() { }
+  csvUrl = AppService.CSV_URL;
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
   }
 
+  exportAll(){
+    this.appService.listApplications().then((data)=>{
+      console.log(data)
+    }).catch((err) => {
+      console.log("Save - caught error:" + err);
+
+      throw err;
+
+    })
+  }
 }
