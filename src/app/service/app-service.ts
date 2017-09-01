@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
 import {Application} from "@sonkal/application-type";
-
+import { environment } from '../../environments/environment';
 //ToDO: this should be part of service or commons
 export interface AppResponse {
   info: string,
@@ -13,7 +13,7 @@ export interface AppResponse {
 export class AppService {
 
   //ToDo: change this to http://application-service:3000/api/applications
-  static serviceUrl = "http://localhost:4200/api/applications";
+  static serviceUrl = environment.appServiceUrl;
   static CSV_URL  = `${AppService.serviceUrl}/?csv`;
 
   constructor(private http: Http) {
