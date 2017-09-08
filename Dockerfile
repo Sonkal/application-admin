@@ -12,6 +12,10 @@ RUN cd /home/node/app && npm install --production
 
 COPY . /home/node/app
 
+USER root
+RUN chown -R node:node .
+USER node
+
 RUN ng build --prod --env=prod
 
 EXPOSE 4200
